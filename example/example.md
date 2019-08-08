@@ -1,13 +1,3 @@
-### Some / Maybe / Option / Result / Nullable  
-#### **Can avoid semantic confusion caused by returning null when returning a value**  
-like Haskel Maybe  
-
----
-[![pub](https://img.shields.io/pub/v/some.svg)](https://pub.dev/packages/some)
-
----
-# Usage 
-
 ## Import 
 ```dart
 import 'package:some/index.dart'; // import all
@@ -18,7 +8,6 @@ import 'package:some/none.dart'; // only class None
 
 import 'package:some/null.dart'; // only no null function
 ```
-
 
 ## Create
 

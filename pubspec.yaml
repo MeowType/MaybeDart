@@ -1,5 +1,5 @@
 name: some
-version: '1.0.0'
+version: '1.0.1'
 description: 'Some / Maybe / Option / Result / Nullable, like Haskel Maybe, Can avoid semantic confusion caused by returning null when returning a value'
 authors:
 - 'MeowType <aditrc@outlook.com>'
