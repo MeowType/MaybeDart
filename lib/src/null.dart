@@ -18,7 +18,7 @@ Maybe<R> when<T, R>(Maybe<T> self, {R some(T), R none()}) {
   return None();
 }
 
-/// FlatMap
+/// fMap
 ///
 /// When it has Value Return [Some(some(it))]
 ///

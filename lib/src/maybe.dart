@@ -34,7 +34,7 @@ abstract class Maybe<T> {
     return None();
   }
 
-  /// FlatMap
+  /// fMap
   /// 
   /// When it has Value Return [Some(some(it))]
   /// 

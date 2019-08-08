@@ -1,6 +1,6 @@
 import "package:test/test.dart";
 
-import 'package:Some/index.dart';
+import 'package:some/index.dart';
 
 void main() {
   test('create Some', () {
