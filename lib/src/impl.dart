@@ -24,7 +24,7 @@ abstract class MaybeImpl<T> implements Maybe<T> {
     } else {
       if (none != null) return Some(none());
     }
-    return None();
+    return const None();
   }
 
   /// fMap
@@ -36,7 +36,7 @@ abstract class MaybeImpl<T> implements Maybe<T> {
     if (has) {
       if (some != null) return Some(some(val));
     }
-    return None();
+    return const None();
   }
 
   /// When it not has Value Return [Some(none(it))]
@@ -46,7 +46,7 @@ abstract class MaybeImpl<T> implements Maybe<T> {
     if (!has) {
       if (none != null) return Some(none());
     }
-    return None();
+    return const None();
   }
 
   /// Set a default value when it is [None]
@@ -54,7 +54,7 @@ abstract class MaybeImpl<T> implements Maybe<T> {
     if (!has) {
       return Some(v);
     }
-    return None();
+    return const None();
   }
 
   /// Set a default value when it is [None]
@@ -64,7 +64,7 @@ abstract class MaybeImpl<T> implements Maybe<T> {
     if (!has) {
       return Some(fn());
     }
-    return None();
+    return const None();
   }
 
   /// The equality operator.

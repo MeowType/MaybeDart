@@ -1,3 +1,6 @@
+# 1.1.1
+const None
+
 # 1.1.0
 Add const constructor
 
