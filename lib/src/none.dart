@@ -1,11 +1,12 @@
 library meowtype.maybe.none;
 
 import './maybe.dart';
+import './impl.dart';
 
 /// Means "no value"
-class None<T> with Maybe<T> implements Maybe<T> {
+class None<T> extends MaybeImpl<T> implements Maybe<T> {
   /// Create [None]
-  None();
+  const None();
 
   T get val => null;
   bool get has => false;
