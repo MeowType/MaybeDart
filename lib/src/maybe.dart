@@ -6,13 +6,13 @@ import './none.dart';
 /// A pure virtual class that represents a union of "has value ([Some])" and "no value ([None])"
 abstract class Maybe<T> {
   /// Create a [Some]
-  const factory Maybe(T val) = Some;
+  const factory Maybe(T val) = Some<T>;
 
   /// Create a [Some]
-  const factory Maybe.Some(T val) = Some;
+  const factory Maybe.Some(T val) = Some<T>;
 
   /// Create a [None]
-  const factory Maybe.None() = None;
+  const factory Maybe.None() = None<T>;
 
   /// Get the Value if it has
   T get val;
