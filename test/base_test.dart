@@ -127,5 +127,10 @@ void main() {
     expect(some is None, isFalse);
 
     final none = None();
+
+    expect(none is Some, isFalse);
+    expect(none is Some<int>, isFalse);
+    expect(none is Some<bool>, isFalse);
+    expect(none is None, isTrue);
   });
 }
