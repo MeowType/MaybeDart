@@ -3,72 +3,119 @@ import "package:test/test.dart";
 import 'package:some/index.dart';
 
 void main() {
-  test('create Some', () {
-    final some = Some(1);
+  group('create', () {
+    test('Some', () {
+      final some = Some(1);
 
-    expect(some.has, isTrue);
-    expect(some.val, equals(1));
+      expect(some.has, isTrue);
+      expect(some.val, equals(1));
+    });
+
+    test('None', () {
+      final none = None();
+
+      expect(none.has, isFalse);
+      expect(none.val, isNull);
+    });
   });
 
-  test('create None', () {
-    final none = None();
+  group('when', () {
+    test('Some', () {
+      final some = Some(1);
 
-    expect(none.has, isFalse);
-    expect(none.val, isNull);
+      final when = some.when(some: (v) => true, none: () => false);
+
+      expect(when.has, isTrue);
+      expect(when.val, isTrue);
+    });
+
+    test('None', () {
+      final none = None();
+
+      final when = none.when(some: (v) => true, none: () => false);
+
+      expect(when.has, isTrue);
+      expect(when.val, isFalse);
+    });
   });
 
-  test('when some', () {
-    final some = Some(1);
+  group('some', () {
+    test('Some', () {
+      final some = Some(1);
 
-    final when = some.when(some: (v) => true, none: () => false);
+      final when = some.some((v) => true);
 
-    expect(when.has, isTrue);
-    expect(when.val, isTrue);
+      expect(when.has, isTrue);
+      expect(when.val, isTrue);
+    });
+
+    test('None', () {
+      final none = None();
+
+      final when = none.some((v) => true);
+
+      expect(when.has, isFalse);
+      expect(when.val, isNull);
+    });
   });
 
-  test('when none', () {
-    final none = None();
+  group('none', () {
+    test('Some', () {
+      final some = Some(1);
 
-    final when = none.when(some: (v) => true, none: () => false);
+      final when = some.none(() => false);
 
-    expect(when.has, isTrue);
-    expect(when.val, isFalse);
+      expect(when.has, isFalse);
+      expect(when.val, isNull);
+    });
+    test('None', () {
+      final none = None();
+
+      final when = none.none(() => false);
+
+      expect(when.has, isTrue);
+      expect(when.val, isFalse);
+    });
   });
 
-  test('some', () {
-    final some = Some(1);
+  group('defaultVal', () {
+    test('Some', () {
+      final some = Some(1);
 
-    final when = some.some((v) => true);
+      final when = some.defaultVal(0);
 
-    expect(when.has, isTrue);
-    expect(when.val, isTrue);
+      expect(when.has, isTrue);
+      expect(when.val, equals(1));
+    });
+
+    test('None', () {
+      final none = None();
+
+      final when = none.defaultVal(true);
+
+      expect(when.has, isTrue);
+      expect(when.val, isTrue);
+    });
   });
 
-  test('none', () {
-    final none = None();
+  group('defaultValFn', () {
+    test('Some', () {
+      final some = Some(1);
 
-    final when = none.none(() => false);
+      final when = some.defaultValFn(() => 0);
 
-    expect(when.has, isTrue);
-    expect(when.val, isFalse);
-  });
+      expect(when.has, isTrue);
+      expect(when.val, equals(1));
+    });
 
-  test('defaultVal', () {
-    final none = None();
+    test('None', () {
+      final none = None();
 
-    final when = none.defaultVal(true);
+      final when = none.defaultValFn(() => true);
 
-    expect(when.has, isTrue);
-    expect(when.val, isTrue);
-  });
-
-  test('defaultValFn', () {
-    final none = None();
-
-    final when = none.defaultValFn(() => true);
-
-    expect(when.has, isTrue);
-    expect(when.val, isTrue);
+      expect(when.has, isTrue);
+      expect(when.val, isTrue);
+    });
   });
 
   test('types', () {
@@ -78,5 +125,7 @@ void main() {
     expect(some is Some<int>, isTrue);
     expect(some is Some<bool>, isFalse);
     expect(some is None, isFalse);
+
+    final none = None();
   });
 }

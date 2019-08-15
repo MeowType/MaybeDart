@@ -1,3 +1,6 @@
+# 1.2.0
+Fix bug: `defaultVal` and `defaultValFn` when `Some` while return `None`
+
 # 1.1.1
 const None
 

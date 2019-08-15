@@ -40,12 +40,12 @@ abstract class Maybe<T> {
   Maybe<R> none<R>(R Function() none);
 
   /// Set a default value when it is [None]
-  Maybe<V> defaultVal<V>(V v);
+  Some<T> defaultVal(T v);
 
   /// Set a default value when it is [None]
   ///
   /// but more lazy
-  Maybe<V> defaultValFn<V>(V fn());
+  Some<T> defaultValFn(T fn());
 
   /// The equality operator.
   ///

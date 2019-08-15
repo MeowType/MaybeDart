@@ -50,21 +50,21 @@ abstract class MaybeImpl<T> implements Maybe<T> {
   }
 
   /// Set a default value when it is [None]
-  Maybe<V> defaultVal<V>(V v) {
+  Some<T> defaultVal(T v) {
     if (!has) {
       return Some(v);
     }
-    return const None();
+    return this;
   }
 
   /// Set a default value when it is [None]
   ///
   /// but more lazy
-  Maybe<V> defaultValFn<V>(V fn()) {
+  Some<T> defaultValFn(T fn()) {
     if (!has) {
       return Some(fn());
     }
-    return const None();
+    return this;
   }
 
   /// The equality operator.
