@@ -41,19 +41,19 @@ Maybe<R> none<T, R>(Maybe<T> self, R Function() none) {
 }
 
 /// Set a default value when it is [None]
-Maybe<V> defaultVal<T, V>(Maybe<T> self, V v) {
+Some<T> defaultVal<T>(Maybe<T> self, T v) {
   if (self is None) {
     return Some(v);
   }
-  return const None();
+  return self;
 }
 
 /// Set a default value when it is [None]
 ///
 /// but more lazy
-Maybe<V> defaultValFn<T, V>(Maybe<T> self, V fn()) {
+Some<T> defaultValFn<T>(Maybe<T> self, T fn()) {
   if (self is None) {
     return Some(fn());
   }
-  return const None();
+  return self;
 }
