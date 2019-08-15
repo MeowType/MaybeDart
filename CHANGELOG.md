@@ -1,5 +1,5 @@
 # 1.2.2
-remove const None
+remove const None  
 Fix bug: const None<Null> is not Maybe<T>
 
 # 1.2.1
