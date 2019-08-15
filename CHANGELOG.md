@@ -1,3 +1,7 @@
+# 1.2.2
+remove const None
+Fix bug: const None<Null> is not Maybe<T>
+
 # 1.2.1
 Fix bug(`null.dart`): `defaultVal` and `defaultValFn` when `Some` while return `None`
 

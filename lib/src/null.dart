@@ -15,7 +15,7 @@ Maybe<R> when<T, R>(Maybe<T> self, {R some(T), R none()}) {
   } else {
     if (none != null) return Some(none());
   }
-  return const None();
+  return None();
 }
 
 /// fMap
@@ -27,7 +27,7 @@ Maybe<R> some<T, R>(Maybe<T> self, R some(T val)) {
   if (self is Some) {
     if (some != null) return Some(some(self.val));
   }
-  return const None();
+  return None();
 }
 
 /// When it not has Value Return [Some(none(it))]
@@ -37,7 +37,7 @@ Maybe<R> none<T, R>(Maybe<T> self, R Function() none) {
   if (self is None) {
     if (none != null) return Some(none());
   }
-  return const None();
+  return None();
 }
 
 /// Set a default value when it is [None]
