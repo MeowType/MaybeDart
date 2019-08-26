@@ -9,7 +9,7 @@ import './none.dart';
 /// if [some] and [none] all null Return [None]
 ///
 /// else when it has return [Some(some(it))] or not has return [Some(none(it))]
-Maybe<R> when<T, R>(Maybe<T> self, {R some(T), R none()}) {
+Maybe<R> when<T, R>(Maybe<T> self, {R some(T val), R none()}) {
   if (self is Some) {
     if (some != null) return Some(some(self.val));
   } else {

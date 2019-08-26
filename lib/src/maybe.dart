@@ -25,7 +25,7 @@ abstract class Maybe<T> {
   /// if [some] and [none] all null Return [None]
   ///
   /// else when it has return [Some(some(it))] or not has return [Some(none(it))]
-  Maybe<R> when<R>({R some(T), R none()});
+  Maybe<R> when<R>({R some(T val), R none()});
 
   /// fMap
   ///
@@ -37,7 +37,7 @@ abstract class Maybe<T> {
   /// When it not has Value Return [Some(none(it))]
   ///
   /// otherwise return [None]
-  Maybe<R> none<R>(R Function() none);
+  Maybe<R> none<R>(R none());
 
   /// Set a default value when it is [None]
   Some<T> defaultVal(T v);

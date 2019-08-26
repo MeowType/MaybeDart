@@ -15,7 +15,7 @@ class None<T> extends MaybeImpl<T> implements Maybe<T> {
   final bool has = false;
 
   @override
-  Maybe<R> when<R>({R some(T), R none()}) {
+  Maybe<R> when<R>({R some(T val), R none()}) {
     if (none != null) return Some(none());
     some;
     return None();

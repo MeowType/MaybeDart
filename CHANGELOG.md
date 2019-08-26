@@ -1,3 +1,16 @@
+# 1.2.4
+Fix lib/src/maybe.dart. (-0.50 points)  
+Analysis of lib/src/maybe.dart reported 1 hint:  
+line 28 col 28: Avoid types as parameter names.  
+
+Fix lib/src/none.dart. (-0.50 points)  
+Analysis of lib/src/none.dart reported 1 hint:  
+line 18 col 28: Avoid types as parameter names.  
+
+Fix lib/src/null.dart. (-0.50 points)  
+Analysis of lib/src/null.dart reported 1 hint:  
+line 12 col 44: Avoid types as parameter names.
+
 # 1.2.3
 Rewritten implementation  
 
