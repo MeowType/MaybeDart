@@ -3,7 +3,7 @@
 like Haskel Maybe  
 
 ---
-[![pub](https://img.shields.io/pub/v/some.svg)](https://pub.dev/packages/some)
+[![pub](https://img.shields.io/pub/v/some.svg)](https://pub.dev/packages/some) [![MIT](https://img.shields.io/github/license/MeowType/MaybeDart)](https://github.com/MeowType/MaybeDart/blob/master/LICENSE)
 
 ---
 # Usage 
@@ -80,4 +80,15 @@ none.defaultVal('none');
 
 ```dart
 none.defaultValFn(() => 'none');
+```
+
+## Note
+Compare the actual wrapped value when comparing  
+This is useful in some cases, but you need to be careful when mixing the use of normal values and Maybe values, you need check it is Some  
+```dart
+Some(1) == 1
+// true
+
+None() == None()
+// true
 ```

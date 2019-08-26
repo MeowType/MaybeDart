@@ -1,3 +1,14 @@
+# 1.2.3
+Rewritten implementation  
+
+Fix bug: eq  
+- `Some(1) != 1`  
+
+now  
+- `Some(1) == 1`  
+
+Add eq test
+
 # 1.2.2
 remove const None  
 Fix bug: const None<Null> is not Maybe<T>

@@ -118,6 +118,17 @@ void main() {
     });
   });
 
+  test('eq', () {
+    final a = Some(1);
+    final b = Some(1);
+    final c = None();
+    final d = None();
+    
+    expect(a == b, isTrue);
+    expect(a == 1, isTrue);
+    expect(c == d, isTrue);
+  });
+
   test('types', () {
     final some = Maybe(1);
 
