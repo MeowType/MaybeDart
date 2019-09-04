@@ -81,14 +81,3 @@ none.defaultVal('none');
 ```dart
 none.defaultValFn(() => 'none');
 ```
-
-## Note
-Compare the actual wrapped value when comparing  
-This is useful in some cases, but you need to be careful when mixing the use of normal values and Maybe values, you need check it is Some  
-```dart
-Some(1) == 1
-// true
-
-None() == None()
-// true
-```

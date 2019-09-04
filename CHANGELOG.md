@@ -1,3 +1,9 @@
+# 1.3.0
+now  
+
+- `Some(1) != 1`  
+- `None() == None()`  
+
 # 1.2.4
 Fix lib/src/maybe.dart. (-0.50 points)  
 Analysis of lib/src/maybe.dart reported 1 hint:  

@@ -46,19 +46,4 @@ abstract class Maybe<T> {
   ///
   /// but more lazy
   Some<T> defaultValFn(T fn());
-
-  /// The equality operator.
-  ///
-  /// If [other] is Value will compare the this value with other
-  ///
-  /// If both sides are [Some] will compare the values of 2 sides
-  ///
-  /// Or both sides are [None] will return true
-  ///
-  /// Others are false
-  @override
-  bool operator ==(other);
-
-  @override
-  int get hashCode;
 }

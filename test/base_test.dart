@@ -125,7 +125,7 @@ void main() {
     final d = None();
     
     expect(a == b, isTrue);
-    expect(a == 1, isTrue);
+    expect(a == 1, isFalse);
     expect(c == d, isTrue);
   });
 
