@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// https://github.com/google/quiver-dart/blob/40c81470bba06087018741bcd3833f415daee073/lib/src/core/hash.dart
+
 int hash2(a, b) => _finish(_combine(_combine(0, a.hashCode), b.hashCode));
 
 int _combine(int hash, int value) {
