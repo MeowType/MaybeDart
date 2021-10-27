@@ -129,19 +129,4 @@ void main() {
     expect(c == d, isTrue);
   });
 
-  test('types', () {
-    final some = Maybe(1);
-
-    expect(some is Some, isTrue);
-    expect(some is Some<int>, isTrue);
-    expect(some is Some<bool>, isFalse);
-    expect(some is None, isFalse);
-
-    final none = None();
-
-    expect(none is Some, isFalse);
-    expect(none is Some<int>, isFalse);
-    expect(none is Some<bool>, isFalse);
-    expect(none is None, isTrue);
-  });
 }
