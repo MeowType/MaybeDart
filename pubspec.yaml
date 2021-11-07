@@ -1,5 +1,5 @@
 name: some
-version: "2.0.0"
+version: "2.1.0"
 description: "Some / Maybe / Option / Result / Nullable, like Haskel Maybe, Can avoid semantic confusion caused by returning null when returning a value"
 homepage: "https://github.com/MeowType/MaybeDart"
 repository: "https://github.com/MeowType/MaybeDart"
