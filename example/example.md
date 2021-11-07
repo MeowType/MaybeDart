@@ -1,12 +1,7 @@
-## Import 
+## Import
+
 ```dart
 import 'package:some/index.dart'; // import all
-
-import 'package:some/maybe.dart'; // only class Maybe
-import 'package:some/some.dart'; // only class Some
-import 'package:some/none.dart'; // only class None
-
-import 'package:some/null.dart'; // only no null function
 ```
 
 ## Create
@@ -19,37 +14,57 @@ Maybe<int> some = Some(1);
 Maybe<int> none = None();
 ```
 
-```dart
-Maybe<int> some = Maybe(1);
-```
+## Check has value
 
 ```dart
-Maybe<int> some = Maybe.Some(1);
+some.isSome
+none.isNone
+some.has
 ```
 
-```dart
-Maybe<int> none = Maybe.None();
-```
-## GetValue
+## Get value
 
 ```dart
 if(some.has) {
-    some.val
+    some.val!
 }
 ```
 
+## Monadic
+
+```dart
+some.map((v) => 'some');
+some.then((v) => 'some');
+```
+
+```dart
+some.flatMap((v) => Some('some'));
+some.andThen((v) => Some('some'));
+```
+
+## Logical
+
+```dart
+some.and(Some('some'));
+some.andThen((v) => Some('some'));
+```
+
+```dart
+some.or(Some('some'));
+some.orElse(() => Some('some'));
+```
+
+```dart
+some.xor(Some('some'));
+```
+
+## Flatten
+
+```dart
+someSome.flatten();
+```
+
 ## Pattern matching
-```dart
-if(some is Some) {}
-```
-
-```dart
-if(some is Some<int>) {}
-```
-
-```dart
-if(some is None) {}
-```
 
 ```dart
 some.when(some: (v) => 'some', none: () => 'none');
