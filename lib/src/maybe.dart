@@ -8,6 +8,8 @@ class Some<T> {
 
   final T value;
 
+  T get v => this.value;
+
   @override
   bool operator ==(other) => other is Some && other.val == val;
 

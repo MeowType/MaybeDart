@@ -28,6 +28,17 @@ Maybe<int> some = Some(1);
 Maybe<int> none = None();
 ```
 
+## Switch (dart > 3.0.0)
+
+```dart
+Maybe<int> some = Some(1);
+
+var a = switch (some) {
+    Some(v: var v) => v,
+    null => 0
+};
+```
+
 ## Check has value
 
 ```dart
